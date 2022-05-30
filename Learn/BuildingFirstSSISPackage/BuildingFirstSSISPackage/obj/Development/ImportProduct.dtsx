@@ -1,0 +1,1157 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/12/2022 11:25:46 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-417NR2V"
+  DTS:CreatorName="DESKTOP-417NR2V\CUONG NGUYEN"
+  DTS:DTSID="{C493CA9C-8F9A-4229-BD5C-0859C0496880}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{005CBF60-84DF-4066-A623-3C048B0AB8F2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-417NR2V\MSSQLSERVER01.AdvWrk17]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{804BB12C-7EDA-4263-8C86-B3DB85D6F85F}"
+      DTS:ObjectName="DESKTOP-417NR2V\MSSQLSERVER01.AdvWrk17">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-417NR2V\MSSQLSERVER01;Initial Catalog=AdvWrk17;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Product CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Product CSV"
+      DTS:DTSID="{24066A01-8E3A-4F74-94C6-79F9A6BF5664}"
+      DTS:ObjectName="Product CSV">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FileNamePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\DATA ENGINEER PLURALSIGHT\06\demos\Products.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductID"
+              DTS:DTSID="{98306710-C132-488D-B846-01158161902D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductName"
+              DTS:DTSID="{EF72B096-7598-4876-8F5C-971FA2A803D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SupplierID"
+              DTS:DTSID="{71D6FFC8-2970-4B23-B149-7FA46E30DE47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CategoryID"
+              DTS:DTSID="{3DDC30F4-B8FD-4464-A9FD-A646D6F25168}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QuantityPerUnit"
+              DTS:DTSID="{359F6BCC-1543-476D-8EFB-6762593C3FFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice"
+              DTS:DTSID="{94F53626-7056-4222-A98D-AD236F1C414E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitsInStock"
+              DTS:DTSID="{C5ECA21E-A9FD-4890-9739-3F475FDFC9BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitsOnOrder"
+              DTS:DTSID="{B7E8CDF5-BD11-47CC-B9DA-BCAD66B97D46}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ReorderLevel"
+              DTS:DTSID="{C0402B18-65DD-46B5-94D3-057C9C759E2B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Discontinued"
+              DTS:DTSID="{0C7EE18A-52FD-4AD0-96BA-75E84A38B9E3}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{05D58708-A957-428E-A5B2-051FBE02709C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileNamePath">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\DATA ENGINEER PLURALSIGHT\06\demos\Products.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FFB5AE83-88A1-4B79-B767-96958C445010}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Look for row count"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BB8EDEE7-E5ED-4284-9FE3-9882A0ACE933}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Look for row count"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{804BB12C-7EDA-4263-8C86-B3DB85D6F85F}"
+          SQLTask:SqlStatementSource="select count(1)&#xA;from dbo.CSVProduct"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::RowCount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Loop CSV"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{A9A1DF3E-E6B2-413B-A620-044943AC3DF5}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loop CSV">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{D0134AF4-9642-4A78-9EF8-8DFCB9356F52}"
+        DTS:ObjectName="{D0134AF4-9642-4A78-9EF8-8DFCB9356F52}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="D:\DATA ENGINEER PLURALSIGHT\Learn\Files" />
+            <FEFEProperty
+              FileSpec="*.*" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{C6E07A91-1B52-4FEF-844D-FC816A963A37}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="FileNamePath1">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Loop CSV\Import Product"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{33242cce-2c29-45b0-a5f3-d0c41ae38942}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Product"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Loop CSV\Import Product\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[CSVProduct]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop CSV\Import Product\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-417NR2V\MSSQLSERVER01.AdvWrk17]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-417NR2V\MSSQLSERVER01.AdvWrk17]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ProductID"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[ProductID]" />
+                        <inputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ProductName"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[ProductName]" />
+                        <inputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SupplierID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SupplierID"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[SupplierID]" />
+                        <inputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CategoryID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CategoryID"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryID]"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[CategoryID]" />
+                        <inputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QuantityPerUnit]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="QuantityPerUnit"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QuantityPerUnit]"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[QuantityPerUnit]" />
+                        <inputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="UnitPrice"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[UnitPrice]" />
+                        <inputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitsInStock]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="UnitsInStock"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsInStock]"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[UnitsInStock]" />
+                        <inputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitsOnOrder]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="UnitsOnOrder"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsOnOrder]"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[UnitsOnOrder]" />
+                        <inputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ReorderLevel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ReorderLevel"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReorderLevel]"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[ReorderLevel]" />
+                        <inputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Discontinued]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Discontinued"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Discontinued]"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[Discontinued]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ProductID" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SupplierID" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CategoryID" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QuantityPerUnit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="QuantityPerUnit" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="UnitPrice" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsInStock]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="UnitsInStock" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsOnOrder]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="UnitsOnOrder" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReorderLevel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ReorderLevel" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Discontinued]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Discontinued" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop CSV\Import Product\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop CSV\Import Product\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop CSV\Import Product\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop CSV\Import Product\ProductCSV"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="ProductCSV"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop CSV\Import Product\ProductCSV.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Product CSV]"
+                      connectionManagerRefId="Package.ConnectionManagers[Product CSV]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[ProductID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[ProductID]"
+                          length="50"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[ProductID]"
+                          name="ProductID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[ProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[ProductName]"
+                          length="50"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[ProductName]"
+                          name="ProductName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[SupplierID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[SupplierID]"
+                          length="50"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[SupplierID]"
+                          name="SupplierID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[CategoryID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[CategoryID]"
+                          length="50"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[CategoryID]"
+                          name="CategoryID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[QuantityPerUnit]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[QuantityPerUnit]"
+                          length="50"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[QuantityPerUnit]"
+                          name="QuantityPerUnit"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[UnitPrice]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[UnitPrice]"
+                          length="50"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[UnitPrice]"
+                          name="UnitPrice"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[UnitsInStock]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[UnitsInStock]"
+                          length="50"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[UnitsInStock]"
+                          name="UnitsInStock"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[UnitsOnOrder]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[UnitsOnOrder]"
+                          length="50"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[UnitsOnOrder]"
+                          name="UnitsOnOrder"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[ReorderLevel]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[ReorderLevel]"
+                          length="50"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[ReorderLevel]"
+                          name="ReorderLevel"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[Discontinued]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[Discontinued]"
+                          length="50"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].Columns[Discontinued]"
+                          name="Discontinued"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[ProductID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ProductID" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[ProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[SupplierID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SupplierID" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[CategoryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CategoryID" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[QuantityPerUnit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="QuantityPerUnit" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[UnitPrice]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="UnitPrice" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[UnitsInStock]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="UnitsInStock" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[UnitsOnOrder]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="UnitsOnOrder" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[ReorderLevel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ReorderLevel" />
+                        <externalMetadataColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output].ExternalColumns[Discontinued]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Discontinued" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Loop CSV\Import Product.Paths[Flat File Source Output]"
+                  endId="Package\Loop CSV\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Loop CSV\Import Product\ProductCSV.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Loop CSV\Moving CSV File"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{70BAB5F1-BBD7-406C-B33F-4D6AA088FE85}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Moving CSV File"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::FileNamePath"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="$Project::ProcessFiles"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Loop CSV.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{4623FA8F-FC7F-4721-A7A2-84CDE8D8F76D}"
+          DTS:From="Package\Loop CSV\Import Product"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Loop CSV\Moving CSV File" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{49B1AEED-C43F-4C1A-AA42-A0F509DBCFE8}"
+          DTS:ObjectName="{49B1AEED-C43F-4C1A-AA42-A0F509DBCFE8}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileNamePath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table CSVProduct"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C81D187F-4A5F-41E2-AF38-6D8542BB29AD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table CSVProduct"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3ACFB3DD-76E1-41AC-B456-62B5BB74BC74}"
+          SQLTask:SqlStatementSource="Truncate Table dbo.CSVProduct" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7FC6C871-56AB-4B45-9B17-A22F35D32A1B}"
+      DTS:From="Package\Truncate Table CSVProduct"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Loop CSV" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{1B03B2EB-9D43-4211-B21A-CBBC373606EA}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::RowCount] &gt; 0"
+      DTS:From="Package\Look for row count"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Truncate Table CSVProduct" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{3DAFE732-B5C4-4874-BAB0-125FC42E87FD}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::RowCount] == 0"
+      DTS:From="Package\Look for row count"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Loop CSV" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="146.4,41.6"
+          Id="Package\Loop CSV\Import Product"
+          TopLeft="158.266658851837,43.6666682026122" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Loop CSV\Moving CSV File"
+          TopLeft="145.899988575777,161.800002830824" />
+        <EdgeLayout
+          Id="Package\Loop CSV.PrecedenceConstraints[Constraint]"
+          TopLeft="227.683323713807,85.2666682026122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76.5333346282117"
+              Start="0,0"
+              End="0,69.0333346282117">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.0333346282117" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="379.2,257.6"
+          Size="379.2,300.8"
+          Id="Package\Loop CSV"
+          TopLeft="198.233326346345,197.600001570383" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Truncate Table CSVProduct"
+          TopLeft="255.83332316743,46.2000002272924" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="359.83332316743,87.8000002272924">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.8666698455819,109.800001343091"
+              Start="0,0"
+              End="89.8666698455819,102.300001343091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.6031940797795" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61.6031940797795"
+                    Point2="0,65.6031940797795"
+                    Point3="4,65.6031940797795" />
+                  <mssgle:LineSegment
+                    End="85.8666698455819,65.6031940797795" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.8666698455819,65.6031940797795"
+                    Point2="89.8666698455819,65.6031940797795"
+                    Point3="89.8666698455819,69.6031940797795" />
+                  <mssgle:LineSegment
+                    End="89.8666698455819,102.300001343091" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Look for row count"
+          TopLeft="0.83333330021965,96.2000007645289" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="164.03333330022,117.000000764529">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.7999898672105,-50.0000005372365"
+              Start="0,0"
+              End="84.2999898672105,-50.0000005372365">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.8999949336052,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.8999949336052,0"
+                    Point2="45.8999949336052,0"
+                    Point3="45.8999949336052,-4" />
+                  <mssgle:LineSegment
+                    End="45.8999949336052,-46.0000005372365" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.8999949336052,-46.0000005372365"
+                    Point2="45.8999949336052,-50.0000005372365"
+                    Point3="49.8999949336052,-50.0000005372365" />
+                  <mssgle:LineSegment
+                    End="84.2999898672105,-50.0000005372365" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="37.8999949336052,1,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="82.4333333002196,137.800000764529">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="243.533326379459,59.8000008058543"
+              Start="0,0"
+              End="243.533326379459,52.3000008058543">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.72924417896" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.72924417896"
+                    Point2="0,35.72924417896"
+                    Point3="4,35.72924417896" />
+                  <mssgle:LineSegment
+                    End="239.533326379459,35.72924417896" />
+                  <mssgle:CubicBezierSegment
+                    Point1="239.533326379459,35.72924417896"
+                    Point2="243.533326379459,35.72924417896"
+                    Point3="243.533326379459,39.72924417896" />
+                  <mssgle:LineSegment
+                    End="243.533326379459,52.3000008058543" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="113.766663189729,40.72924417896,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Loop CSV\Import Product">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Loop CSV\Import Product\ProductCSV"
+          TopLeft="143.333327637779,85.8000006818771" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Loop CSV\Import Product\OLE DB Destination"
+          TopLeft="291.666655076875,266.066668781175" />
+        <EdgeLayout
+          Id="Package\Loop CSV\Import Product.Paths[Flat File Source Output]"
+          TopLeft="211.333327637779,127.400000681877">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="165.933327439096,138.666668099298"
+              Start="0,0"
+              End="165.933327439096,131.166668099298">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.333334049649" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,65.333334049649"
+                    Point2="0,69.333334049649"
+                    Point3="4,69.333334049649" />
+                  <mssgle:LineSegment
+                    End="161.933327439096,69.333334049649" />
+                  <mssgle:CubicBezierSegment
+                    Point1="161.933327439096,69.333334049649"
+                    Point2="165.933327439096,69.333334049649"
+                    Point3="165.933327439096,73.333334049649" />
+                  <mssgle:LineSegment
+                    End="165.933327439096,131.166668099298" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loop CSV\Import Product\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
